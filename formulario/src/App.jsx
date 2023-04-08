@@ -13,6 +13,11 @@ function App() {
   return (
     <div className="app">
 
+      <header>
+        <h2>Cadastr-se gratuitamente!</h2>
+        <p>Faça o seu cadastro para ter acesso a todos os recursos da nossa plataforma</p>
+      </header>
+
       <SCFormContainer>
         <form onSubmit={(e) => mudarPasso(passoAtual + 1, e)}>
           <Passos passoAtual={passoAtual}/>

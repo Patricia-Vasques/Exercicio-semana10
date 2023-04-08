@@ -1,42 +1,45 @@
-import React from "react"
+import { GrFormNextLink, GrFormPrevious } from "react-icons/gr"
+import { FiSend } from "react-icons/fi"
 import DadosPessoais from "./components/DadosPessoais"
 import Endereco from "./components/Endereco"
 import Agradecimento from "./components/Agradecimento"
+import { SCButton, SCFormContainer, SCHeader } from "./styles"
 import { useForm } from "./hooks/useForm"
+import { Passos } from "./components/Passos"
 
 
 function App() {
 
   const componentesFormulario = [<DadosPessoais />, <Endereco />, <Agradecimento />]
 
-  const { passoAtual, componenteAtual, mudarPasso } = useForm(componentesFormulario)
+  const { passoAtual, componenteAtual, mudarPasso, ehUltimoPasso } = useForm(componentesFormulario)
 
   return (
     <div className="app">
-
-      <header>
-        <h2>Cadastr-se gratuitamente!</h2>
+      <SCHeader>
+        <h2>Cadastre-se gratuitamente!</h2>
         <p>Faça o seu cadastro para ter acesso a todos os recursos da nossa plataforma</p>
-      </header>
-
+      </SCHeader>
       <SCFormContainer>
         <form onSubmit={(e) => mudarPasso(passoAtual + 1, e)}>
           <Passos passoAtual={passoAtual}/>
-          <div className="inputs-container">{componenteAtual}</div>
+          <div className="inputs-container">
+            {componenteAtual}
+          </div>
           <div className="acoes">
-            {!passoAtual == 0 &&
-            <SCButton type="button" onclick={(e) => mudarPasso(passoAtual -1, e)}>
-            <GrFormPrevious /> <span>Voltar</span>
-            </SCButton >}
-            {ehUltimoPasso ? ( 
-              <SCButton type="submit"><span>Enviar</span></SCButton>
-             ):(
-             <SCButton type="submit"><span>Avançar</span><GrFormNextLink /></SCButton>
+            {!passoAtual == 0 && 
+            <SCButton type="button" onClick={(e) => mudarPasso(passoAtual - 1, e)}>
+              <GrFormPrevious /><span>Voltar</span>
+            </SCButton>}
+            {ehUltimoPasso ? (
+              <SCButton type="submit"><span>Enviar</span><FiSend /></SCButton>
+            ) : (
+              <SCButton type="submit"><span>Avançar</span><GrFormNextLink /></SCButton>
             )}
           </div>
         </form>
-        </SCFormContainer>
-      </div>
+      </SCFormContainer>
+    </div>
   )
 }
 

@@ -1,41 +1,61 @@
 function Endereco() {
-    <div>
-        <div className="col-12">
-            <label className="form-label" htmlFor="logradouro">Logradouro:</label>
-            <input className="form-control" name="logradouro" type="text" id="logradouro" placeholder="Digite seu logradouro" required/>
-        </div>
+    return (
+        <div>
+            <div className="col-12">
+                <label className="form-label" htmlFor="logradouro">Logradouro:</label>
+                <div className="input-group mb-3 col-12">
+                    <input type="text" className="form-control" name="logradouro" id="logradouro" placeholder="Logradouro" required />
+                </div>
+            </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="numero">Número:</label>
-            <input className="form-control" name="numero" type="number" id="numero" placeholder="Digite o número" required/>
-        </div>
+            <div className="row">
+                <div className="col-4">
+                    <label className="form-label" htmlFor="numero">Nº:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="numero" id="numero" placeholder="Nº" required />
+                    </div>
+                </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="bairro">Bairro:</label>
-            <input className="form-control" name="bairro" type="text" id="bairro" placeholder="Digite seu bairro" required/>
-        </div>
+                <div className="col-8">
+                    <label className="form-label" htmlFor="complemento">Complemento:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="complemento" id="complemento" placeholder="Complemento" />
+                    </div>
+                </div>
+            </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="complemento">Complemento:</label>
-            <input className="form-control" name="complemento" type="text" id="complemento" placeholder="Digite um complemento" required/>
-        </div>
+            <div className="row">
+                <div className="col-6">
+                    <label className="form-label" htmlFor="bairro">Bairro:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="bairro" id="bairro" placeholder="Bairro" required />
+                    </div>
+                </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="cidade">Cidade:</label>
-            <input className="form-control" name="cidade" type="text" id="cidade" placeholder="Digite a cidade" required/>
-        </div>
+                <div className="col-6">
+                    <label className="form-label" htmlFor="cidade">Cidade:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="cidade" id="cidade" placeholder="Cidade" required />
+                    </div>
+                </div>
+            </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="estado">Estado:</label>
-            <input className="form-control" name="estado" type="text" id="estado" placeholder="Digite seu estado" required/>
-        </div>
+            <div className="col-6">
+                    <label className="form-label" htmlFor="estado">Estado:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="estado" id="estado" placeholder="Estado" required />
+                    </div>
+            </div>
 
-        <div className="col-12">
-            <label className="form-label" htmlFor="cep">CEP:</label>
-            <input className="form-control" name="cep" type="number" id="cep" placeholder="Digite seu CEP" required/>
+            <div className="row">
+                <div className="col-6">
+                    <label className="form-label" htmlFor="cep">CEP:</label>
+                    <div className="input-group">
+                        <input type="text" className="form-control" name="cep" id="cep" placeholder="CEP" required />
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </div>
+    );
 }
-
 export default Endereco;

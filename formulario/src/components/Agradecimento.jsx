@@ -2,11 +2,11 @@ function Agradecimento() {
     return(
         <div className="col-12">
             <div>
-                <p>Agradecemos por preencher nosso formulário!</p>
+                <p>Agradecemos por se cadastrar!</p>
             </div>
 
             <div className="col-12">
-                <h3>Onde nos conheceu? </h3>
+                <h3>Agora nos diga: Onde nos conheceu? </h3>
                 <div className="col-12">
                
 
